@@ -225,7 +225,3 @@ El juego se inicia a través del botón "Empezar" y muestra:
 ## Licencia
 
 MIT License
-
----
-
-**Autor**: Francisco Javier López-Dufour Morales
