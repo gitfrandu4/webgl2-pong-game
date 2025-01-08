@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+        <link rel="stylesheet" href="styles.css">
+        <h1>Informática Gráfica</h1>
+        <h2>Practica 2</h2>
+        <p>Francisco Javier López-Dufour Morales</p>
+    </head>
+    <body>
+        <canvas style="min-height: 50%" width="350" height="350" id="my_Canvas"></canvas>
+        <div class="container">
+            <div class="controls">
+                <button id="start">Empezar</button>
+            </div>
+            <hr>
+            <div class="score">
+                <p>Puntuación: 0</p>
+            </div>
+            <hr>
+            <div class="score-history">
+                <p>Historial de Puntuaciones:</p>
+                <ul id="score-history-list">
+                    <li>Juego 1: 0</li>
+                    <li>Juego 2: 0</li>
+                    <li>Juego 3: 0</li>
+                    <li>Juego 4: 0</li>
+                    <li>Juego 5: 0</li>
+                </ul>
+            </div>
+        </div>
+        <script id="vertex-shader" type="x-shader/x-vertex">
+            #version 300 es
+            precision mediump float;
+            in vec2 aCoordinates;
+            out vec2 vCoordinates;
+            void main(void) {
+              gl_Position = vec4(aCoordinates, 0, 1);
+              vCoordinates = aCoordinates;
+            }
+        </script>
+        <script id="fragment-shader" type="x-shader/x-fragment">
+            #version 300 es
+            precision mediump float;
+            uniform vec4 uColor;
+            in vec2 vCoordinates;
+            out vec4 fragColor;
+            void main(void) {
+              fragColor = uColor;
+            }
+        </script>
+        <script src="script.js"></script>
+    </body>
+</html>
